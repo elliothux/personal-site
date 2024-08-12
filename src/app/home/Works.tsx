@@ -209,11 +209,11 @@ export function Works({ show }: { show: boolean }) {
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.section
               className="w-[90vw] md:w-[580px] py-5 overflow-scroll scrollbar-hide relative"
-              style={{ height: window.innerHeight }}
+              style={{ maxHeight: window.innerHeight }}
               layoutId={current.period}
               ref={ref}
             >
-              <div className="flex mb-2">
+              <div className="flex mb-2 lg:hidden">
                 <button className="p-2 border rounded-full ml-auto bg-white/10" onClick={() => setIndex(-1)}>
                   <X size={18} />
                 </button>
