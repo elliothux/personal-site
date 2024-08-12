@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import { useScreen } from 'hooks/useScreen';
 import { PropsWithChildren } from 'react';
-import { useScreen } from '../hooks/useScreen';
-import { blockAnimation } from '../utils/animation';
+import { blockAnimation } from 'utils/animation';
 
 interface Props {
   delay: number;
