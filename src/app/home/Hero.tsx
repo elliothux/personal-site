@@ -4,28 +4,48 @@ import { TextGenerateEffect } from 'components/TextGenerateEddect';
 import { motion } from 'framer-motion';
 import { useScreen } from 'hooks/useScreen';
 import { default as Image, ImageProps } from 'next/image';
-import { forwardRef, useEffect, useMemo } from 'react';
+import { forwardRef, useEffect, useMemo, useState } from 'react';
 import { lora } from 'utils/font';
 import { cn } from 'utils/misc';
+import { About } from './About';
+import { Contact } from './Contact';
+import { Stacks } from './Stacks';
+import { Works } from './Works';
 
-const descClassName = cn(lora.className, 'text-3xl md:text-4xl text-neutral-400 leading-snug');
+const descClassName = cn(
+  lora.className,
+  'text-3xl md:text-4xl text-neutral-400 leading-snug select-none pointer-events-none',
+);
 
 export function Hero() {
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 100);
+    setTimeout(() => setShow(true), 1500);
   }, []);
 
   return (
-    <TextGenerateEffect className="text-center" containerClassNames={['relative z-50']}>
-      <div className="flex justify-center items-center gap-3 relative mb-3">
-        <h1 className="text-4xl md:text-5xl">Hi, I’m Elliot Hu,</h1>
-        <div className="w-[40px] h-[40px]">
-          <AvatarImg />
+    <>
+      <TextGenerateEffect className="text-center select-none" containerClassNames={['relative z-50']}>
+        <div className="flex justify-center items-center gap-3 mb-3">
+          <h1 className="text-4xl md:text-5xl select-none pointer-events-none">Hi, I’m Elliot Hu,</h1>
+          <div className="w-[40px] h-[40px] relative">
+            <AvatarImg />
+          </div>
         </div>
+        <p className={descClassName}>Full-Stack Engineer</p>
+        <p className={descClassName}>Startup Co-Founder</p>
+      </TextGenerateEffect>
+
+      <div className="mt-32 grid grid-cols-8 gap-6">
+        <About show={show} />
+        <Contact show={show} />
+        <Stacks show={show} />
+        <Works show={show} />
       </div>
-      <p className={descClassName}>Full-Stack Engineer</p>
-      <p className={descClassName}>Startup Co-Founder</p>
-    </TextGenerateEffect>
+    </>
   );
 }
 
@@ -39,27 +59,23 @@ function AvatarImg() {
         transition: { type: 'just' },
         clipPath: 'circle(23.5% at 50% 58%)',
         scale: 0.55,
-        translateY: 0,
-        translateX: 0,
+        y: -100,
+        x: -80,
         cursor: `url(https://imagedelivery.net/Zw2NKlw6vpAEx4T5z1A_JQ/6bcc1004-042f-463d-1c56-81b0f2cab600/w=28), auto`,
+        shadow: '0 0 0 0 rgba(0, 0, 0, 0)',
+      },
+      hover: {
+        shadow: '0 0 0 10px rgba(0, 0, 0, 0.2)',
       },
       tap: {
         transition: { type: 'spring' },
         clipPath: 'circle(100% at 50% 58%)',
         cursor: `url(https://imagedelivery.net/Zw2NKlw6vpAEx4T5z1A_JQ/271b1ba5-a380-4f48-df4b-f43427103400/w=28), auto`,
         ...{
-          lg: { scale: 3, translateY: 250, translateX: -100 },
-          md: { scale: 2.5, translateY: 200, translateX: -120 },
-          sm: {
-            scale: 2,
-            translateY: 150,
-            translateX: -80,
-          },
-          xs: {
-            scale: 1.5,
-            translateY: 100,
-            translateX: -100,
-          },
+          lg: { scale: 3, y: 150, x: -180 },
+          md: { scale: 2.5, y: 100, x: -200 },
+          sm: { scale: 2, y: 50, x: -200 },
+          xs: { scale: 1.5, y: 0, x: -220 },
         }[size],
       },
     }),
@@ -67,15 +83,16 @@ function AvatarImg() {
   );
 
   return (
-    <MotionImage
-      className="max-w-[100vw] w-[220px] absolute -top-[100px] -right-[100px] rounded-lg z-50"
-      src="10c7bc95-34c6-4873-741a-630826354700"
-      alt="me and fully ball"
-      width={1372}
-      height={1372}
+    <motion.div
+      style={{
+        backgroundImage:
+          'url(https://imagedelivery.net/Zw2NKlw6vpAEx4T5z1A_JQ/10c7bc95-34c6-4873-741a-630826354700/w=1200)',
+      }}
+      className="max-w-[100vw] w-[220px] h-[220px] absolute rounded-lg z-50 bg-cover bg-center select-none"
       variants={variants}
       initial="initial"
       whileTap="tap"
+      whileHover="hover"
     />
   );
 }

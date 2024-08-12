@@ -1,8 +1,8 @@
 'use client';
 
 import { Bento } from 'components/Bento';
-import { motion } from 'framer-motion';
-import { blockAnimation } from 'utils/animation';
+import { HeroSection } from 'components/HeroSection';
+import { Balancer } from 'react-wrap-balancer';
 
 const items = [
   'Typescript',
@@ -29,31 +29,23 @@ const items = [
   'Photoshop',
 ];
 
-export function Stacks() {
+export function Stacks({ show }: { show: boolean }) {
   return (
-    <motion.div
-      className="col-span-full sm:col-span-4 md:col-span-3"
-      transition={{
-        delay: 2.5,
-        duration: 2,
-        type: 'spring',
-      }}
-      {...blockAnimation}
-    >
+    <HeroSection show={show} delay={2.5} className="col-span-full sm:col-span-4 md:col-span-3">
       <Bento
         title="My stacks"
         className="h-full"
         background={[310, 467, 'd32d9f91-8ed7-4220-e576-1c6b600f0500']}
         highlight="#1863CE"
       >
-        <p className="mt-5 font-light text-white md:text-lg">
+        <Balancer as="p" className="mt-5 font-light text-white md:text-lg">
           Proficient in comprehensive
           <br />
           <span className="underline">Web Stacks.</span>
-        </p>
-        <p className="font-light text-neutral-300 text-sm mt-4">
+        </Balancer>
+        <Balancer as="p" className="font-light text-neutral-300 text-sm mt-4">
           Constantly learning and mastering new technologies to stay at the forefront of tech innovations.
-        </p>
+        </Balancer>
         <svg
           viewBox="0 0 262 144"
           fill="none"
@@ -70,7 +62,7 @@ export function Stacks() {
           ))}
         </div>
       </Bento>
-    </motion.div>
+    </HeroSection>
   );
 }
 

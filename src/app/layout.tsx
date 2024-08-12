@@ -1,5 +1,5 @@
 import { Link } from 'components/Link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { kanit } from 'utils/font';
@@ -19,12 +19,19 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body className={cn(kanit.className, 'text-white')}>
         {children}
-        <footer className="text-center font-light text-sm text-neutral-400 py-8 space-y-1">
-          <p>Designed and built by Elliot Hu</p>
+        <footer className="text-center font-light text-sm text-neutral-400 py-8 space-y-2">
+          <Link href="https://elliothu.me" className="hover:text-white" underlineClassName="bg-white">
+            Designed and built by Elliot Hu
+            <ArrowUpRight size={18} className="inline-block ml-1 -mt-1" />
+          </Link>
           <p>
-            <Link className="underline hover:text-white cursor-pointer" href="/">
+            <Link
+              className="hover:text-white"
+              underlineClassName="bg-white"
+              href="https://github.com/elliothux/personal-site"
+            >
               <span>Open source on Github</span>
-              <ArrowUpRight size={18} className="inline ml-1" />
+              <Github size={18} className="inline-block ml-2 -mt-1" />
             </Link>
           </p>
         </footer>

@@ -1,12 +1,14 @@
 'use client';
 
 import { Bento } from 'components/Bento';
+import { HeroSection } from 'components/HeroSection';
 import { LinkButton } from 'components/Link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from 'hooks/useOutsideClick';
+import { useScrollLock } from 'hooks/useScrollLock';
+import { X } from 'lucide-react';
 import { default as Image } from 'next/image';
 import { memo, ReactNode, useRef, useState } from 'react';
-import { blockAnimation } from 'utils/animation';
 import { cn } from 'utils/misc';
 
 const tencentLogo = (
@@ -59,7 +61,7 @@ const items: ConfigItem[] = [
     ),
     link: 'https://www.cocast.fit',
     description:
-      'Cocast is a SaaS company pioneering the future of fitness training software, empowering a revolution in how fitness training is delivered and experienced globally.',
+      'A SaaS company pioneering the future of fitness training software, empowering a revolution in how fitness training is delivered and experienced globally.',
     works: [
       'Lead the foundation and development of cocast.fit, a progressive start-up offering SaaS for fitness trainers.',
       'Develop and execute the technical vision and roadmap for cocast.fit.',
@@ -144,24 +146,18 @@ const items: ConfigItem[] = [
   },
 ];
 
-export function Works() {
+export function Works({ show }: { show: boolean }) {
   const [index, setIndex] = useState(-1);
 
   const ref = useRef<HTMLDivElement>(null);
   useOutsideClick(ref, () => setIndex(-1));
 
   const current = index > -1 ? items[index] : null;
+  useScrollLock(!!current);
+
   return (
     <>
-      <motion.div
-        className="col-span-full md:col-span-5"
-        transition={{
-          delay: 3,
-          duration: 2,
-          type: 'spring',
-        }}
-        {...blockAnimation}
-      >
+      <HeroSection show={show} delay={3} className="col-span-full md:col-span-5">
         <Bento
           title="My works"
           className="h-full"
@@ -197,7 +193,7 @@ export function Works() {
             ))}
           </div>
         </Bento>
-      </motion.div>
+      </HeroSection>
       <AnimatePresence>
         {current ? (
           <motion.div
@@ -211,7 +207,17 @@ export function Works() {
       <AnimatePresence>
         {current ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
-            <motion.section className="w-[90vw] md:w-[580px] relative" layoutId={current.period} ref={ref}>
+            <motion.section
+              className="w-[90vw] md:w-[580px] max-h-[100vh] py-5 overflow-scroll relative"
+              layoutId={current.period}
+              ref={ref}
+              style={{ scrollbarWidth: 'none' }}
+            >
+              <div className="flex mb-2">
+                <button className="p-2 border rounded-full ml-auto bg-white/10" onClick={() => setIndex(-1)}>
+                  <X size={18} />
+                </button>
+              </div>
               <div className="flex flex-row items-start">
                 <Item item={current} />
               </div>

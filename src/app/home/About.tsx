@@ -1,7 +1,7 @@
 'use client';
 
 import { Bento } from 'components/Bento';
-import { motion } from 'framer-motion';
+import { HeroSection } from 'components/HeroSection';
 import {
   Ampersand,
   BicepsFlexed,
@@ -13,7 +13,7 @@ import {
   LucideIcon,
   Rocket,
 } from 'lucide-react';
-import { blockAnimation } from 'utils/animation';
+import { Balancer } from 'react-wrap-balancer';
 
 const items: [LucideIcon, string][] = [
   [BicepsFlexed, 'A fitness aficionado, fostering fervor for fitness'],
@@ -26,27 +26,19 @@ const items: [LucideIcon, string][] = [
   [Camera, 'An artist at heart, framing life through photography'],
 ];
 
-export function About() {
+export function About({ show }: { show: boolean }) {
   return (
-    <motion.div
-      className="col-span-full md:col-span-5"
-      transition={{
-        delay: 1.5,
-        duration: 2,
-        type: 'spring',
-      }}
-      {...blockAnimation}
-    >
+    <HeroSection show={show} delay={1.5} className="col-span-full md:col-span-5">
       <Bento title="About me" className="h-full" background={[520, 385, '801cb044-2747-46f9-0901-1d83a19f5500']}>
         <div className="grid gap-2 mt-8 mb-4">
           {items.map(([Icon, text]) => (
-            <p key={text} className="flex items-center gap-2 text-sm font-light py-1">
-              <Icon size={18} />
-              <span>{text}</span>
+            <p key={text} className="flex items-start lg:items-center gap-2 text-sm font-light py-1">
+              <Icon size={18} className="grow-0 shrink-0" />
+              <Balancer as="span">{text}</Balancer>
             </p>
           ))}
         </div>
       </Bento>
-    </motion.div>
+    </HeroSection>
   );
 }

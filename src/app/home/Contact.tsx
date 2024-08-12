@@ -1,10 +1,9 @@
 'use client';
 
 import { Bento } from 'components/Bento';
+import { HeroSection } from 'components/HeroSection';
 import { Link } from 'components/Link';
-import { motion } from 'framer-motion';
 import { ArrowDownToLine, Github, Linkedin, LucideIcon, Mail } from 'lucide-react';
-import { blockAnimation } from 'utils/animation';
 
 const items: {
   icon: LucideIcon;
@@ -26,17 +25,9 @@ const items: {
   },
 ];
 
-export function Contact() {
+export function Contact({ show }: { show: boolean }) {
   return (
-    <motion.div
-      className="col-span-full sm:col-span-4 md:col-span-3"
-      transition={{
-        delay: 2,
-        duration: 2,
-        type: 'spring',
-      }}
-      {...blockAnimation}
-    >
+    <HeroSection show={show} delay={2} className="col-span-full sm:col-span-4 md:col-span-3">
       <Bento
         title="Contact me"
         className="h-full"
@@ -58,7 +49,7 @@ export function Contact() {
         </div>
 
         <div className="font-light flex justify-between items-center pt-5 sm:pt-0">
-          <Link href="/" target="_blank">
+          <Link href="https://public.cocast.fit/Resume%20-%20Elliot.pdf" target="_blank">
             Download my resume
           </Link>
           <button className="p-2 rounded-full bg-white/50 backdrop-blur-[20px]">
@@ -66,6 +57,6 @@ export function Contact() {
           </button>
         </div>
       </Bento>
-    </motion.div>
+    </HeroSection>
   );
 }

@@ -3,19 +3,23 @@
 import { Bento } from 'components/Bento';
 import { LinkButton } from 'components/Link';
 import { motion } from 'framer-motion';
+import { useScreen } from 'hooks/useScreen';
 import { default as Image } from 'next/image';
+import { memo } from 'react';
 import { blockAnimation } from 'utils/animation';
 import { inter, lora } from 'utils/font';
 import { cn } from 'utils/misc';
 
-const items: {
+interface Project {
   name: string;
   description: string;
   cover: string;
   link?: string;
   highlight?: string;
   cursor?: string;
-}[] = [
+}
+
+const items: Project[] = [
   {
     name: 'Cocast.fit',
     description: 'Next-Gen SaaS platform for fitness trainers.',
@@ -81,6 +85,8 @@ const animation = {
 };
 
 export function Projects() {
+  const { width } = useScreen({ immediate: true });
+
   return (
     <>
       <motion.h2
@@ -95,35 +101,45 @@ export function Projects() {
         My projects
       </motion.h2>
       <div className="mt-12 grid md:grid-cols-2 gap-6">
-        {items.map(({ name, description, link, cover, highlight, cursor }, index) => (
-          <motion.div
-            key={name}
-            transition={{
-              duration: 2,
-              type: 'spring',
-              delay: index % 2 === 0 ? 0 : 0.5,
-            }}
-            viewport={{ amount: 0.5, once: true }}
-            {...animation}
-          >
-            <Bento
-              contentClassName="px-0 py-0 relative"
-              containerClassName="py-0"
-              highlight={highlight}
-              cursor={cursor}
-            >
-              <Image src={cover} alt={name} width={417} height={521} className="w-full h-auto" />
-              <div className={cn('absolute bottom-0 w-full px-6 pb-2 md:px-10 md:pb-5', inter.className)}>
-                <h3 className="text-3xl sm:text-4xl text-white font-bold text-nowrap">
-                  <span>{name}</span>
-                  {link ? <LinkButton href={link} highlight={highlight} target="_blank" /> : null}
-                </h3>
-                <p className="text-neutral-300 text-xs mt-2 h-8">{description}</p>
-              </div>
-            </Bento>
-          </motion.div>
+        {items.map((item, index) => (
+          <Item key={index} item={item} index={index} cols={width! < 768 ? 1 : 2} />
         ))}
       </div>
     </>
   );
 }
+
+const Item = memo(
+  ({
+    item: { name, description, link, cover, highlight, cursor },
+    index,
+    cols,
+  }: {
+    item: Project;
+    index: number;
+    cols: number;
+  }) => {
+    return (
+      <motion.div
+        transition={{
+          duration: 2,
+          type: 'spring',
+          delay: cols > 1 && index % 2 ? 0.5 : 0,
+        }}
+        viewport={{ amount: cols > 1 ? 0.5 : 0.2, once: true }}
+        {...animation}
+      >
+        <Bento contentClassName="px-0 py-0 relative" containerClassName="py-0" highlight={highlight} cursor={cursor}>
+          <Image src={cover} alt={name} width={417} height={521} className="w-full h-auto" />
+          <div className={cn('absolute bottom-0 w-full px-6 pb-2 sm:px-10 sm:pb-5', inter.className)}>
+            <h3 className="text-3xl sm:text-4xl text-white font-bold text-nowrap">
+              <span>{name}</span>
+              {link ? <LinkButton href={link} highlight={highlight} target="_blank" /> : null}
+            </h3>
+            <p className="text-neutral-300 text-xs mt-2 h-8">{description}</p>
+          </div>
+        </Bento>
+      </motion.div>
+    );
+  },
+);
