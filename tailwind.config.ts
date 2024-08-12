@@ -25,7 +25,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwind-children'), addVariablesForColors],
+  plugins: [require('tailwind-children'), require('tailwind-scrollbar-hide'), addVariablesForColors],
 };
 
 export default config;

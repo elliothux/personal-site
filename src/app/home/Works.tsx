@@ -208,10 +208,9 @@ export function Works({ show }: { show: boolean }) {
         {current ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.section
-              className="w-[90vw] md:w-[580px] max-h-[100vh] py-5 overflow-scroll relative"
+              className="w-[90vw] md:w-[580px] max-h-[100vh] py-5 overflow-scroll scrollbar-hide relative"
               layoutId={current.period}
               ref={ref}
-              style={{ scrollbarWidth: 'none' }}
             >
               <div className="flex mb-2">
                 <button className="p-2 border rounded-full ml-auto bg-white/10" onClick={() => setIndex(-1)}>

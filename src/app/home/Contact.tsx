@@ -52,7 +52,10 @@ export function Contact({ show }: { show: boolean }) {
           <Link href="https://public.cocast.fit/Resume%20-%20Elliot.pdf" target="_blank">
             Download my resume
           </Link>
-          <button className="p-2 rounded-full bg-white/50 backdrop-blur-[20px]">
+          <button
+            className="p-2 rounded-full bg-white/50 backdrop-blur-[20px]"
+            onClick={() => window.open('https://public.cocast.fit/Resume%20-%20Elliot.pdf', '_blank')}
+          >
             <ArrowDownToLine size={22} />
           </button>
         </div>

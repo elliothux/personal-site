@@ -4,13 +4,9 @@ import { TextGenerateEffect } from 'components/TextGenerateEddect';
 import { motion } from 'framer-motion';
 import { useScreen } from 'hooks/useScreen';
 import { default as Image, ImageProps } from 'next/image';
-import { forwardRef, useEffect, useMemo, useState } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { lora } from 'utils/font';
 import { cn } from 'utils/misc';
-import { About } from './About';
-import { Contact } from './Contact';
-import { Stacks } from './Stacks';
-import { Works } from './Works';
 
 const descClassName = cn(
   lora.className,
@@ -18,14 +14,6 @@ const descClassName = cn(
 );
 
 export function Hero() {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => window.scrollTo(0, 0), 100);
-    setTimeout(() => setShow(true), 1500);
-  }, []);
-
   return (
     <>
       <TextGenerateEffect className="text-center select-none" containerClassNames={['relative z-50']}>
@@ -38,13 +26,6 @@ export function Hero() {
         <p className={descClassName}>Full-Stack Engineer</p>
         <p className={descClassName}>Startup Co-Founder</p>
       </TextGenerateEffect>
-
-      <div className="mt-32 grid grid-cols-8 gap-6">
-        <About show={show} />
-        <Contact show={show} />
-        <Stacks show={show} />
-        <Works show={show} />
-      </div>
     </>
   );
 }
