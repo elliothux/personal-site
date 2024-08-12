@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "rm -rf ./out && bun run build && wrangler pages deploy ./out --project-name elliothu-personal-site --branch main"
+    "deploy": "bun run build && wrangler pages deploy ./out --project-name elliothu-personal-site --branch main"
   },
   "dependencies": {
     "clsx": "^2.1.1",

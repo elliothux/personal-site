@@ -208,7 +208,8 @@ export function Works({ show }: { show: boolean }) {
         {current ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.section
-              className="w-[90vw] md:w-[580px] max-h-[100vh] py-5 overflow-scroll scrollbar-hide relative"
+              className="w-[90vw] md:w-[580px] py-5 overflow-scroll scrollbar-hide relative"
+              style={{ height: window.innerHeight }}
               layoutId={current.period}
               ref={ref}
             >

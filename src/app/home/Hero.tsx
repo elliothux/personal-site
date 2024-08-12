@@ -74,6 +74,7 @@ function AvatarImg() {
       initial="initial"
       whileTap="tap"
       whileHover="hover"
+      onTouchStart={(e) => e.preventDefault()}
     />
   );
 }
