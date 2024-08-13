@@ -76,7 +76,14 @@ const items: ConfigItem[] = [
     period: 'June 2022 - May 2023',
     logo: (className) => (
       <div className={cn(className, 'bg-white relative flex items-center justify-center')}>
-        <Image src="ff68e379-b983-4265-e3f4-6ec4ebe7de00" alt="moego" width={21} height={19} className="w-[55%]" />
+        <Image
+          src="ff68e379-b983-4265-e3f4-6ec4ebe7de00"
+          alt="moego"
+          width={21}
+          height={19}
+          className="w-[55%]"
+          priority
+        />
       </div>
     ),
     link: 'https://www.moego.pet',
