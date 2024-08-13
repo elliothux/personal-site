@@ -130,6 +130,7 @@ export function Bento({
               height={background[1]}
               src={background[2]}
               className="absolute top-0 left-0 w-full h-full pointer-events-none px-0"
+              priority
             />
           ) : null}
           <div

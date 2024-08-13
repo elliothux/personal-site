@@ -62,7 +62,7 @@ const Item = memo(
         {...animation}
       >
         <Bento contentClassName="px-0 py-0 relative" containerClassName="py-0" highlight={highlight} cursor={cursor}>
-          <Image src={cover} alt={name} width={417} height={521} className="w-full h-auto" />
+          <Image src={cover} alt={name} width={417} height={521} className="w-full h-auto" priority />
           <div className={cn('absolute bottom-0 w-full px-6 pb-2 sm:px-10 sm:pb-5', inter.className)}>
             <h3 className="text-3xl sm:text-4xl text-white font-bold text-nowrap">
               <span>{name}</span>
