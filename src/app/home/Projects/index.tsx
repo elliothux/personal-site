@@ -59,6 +59,8 @@ const Item = memo(
           delay: cols > 1 && index % 2 ? 0.5 : 0,
         }}
         viewport={{ amount: cols > 1 ? 0.5 : 0.2, once: true }}
+        onClick={link ? () => window.open(link, '_blank') : undefined}
+        className={link ? 'cursor-pointer' : ''}
         {...animation}
       >
         <Bento contentClassName="px-0 py-0 relative" containerClassName="py-0" highlight={highlight} cursor={cursor}>
@@ -66,7 +68,7 @@ const Item = memo(
           <div className={cn('absolute bottom-0 w-full px-6 pb-2 sm:px-10 sm:pb-5', inter.className)}>
             <h3 className="text-3xl sm:text-4xl text-white font-bold text-nowrap">
               <span>{name}</span>
-              {link ? <LinkButton href={link} highlight={highlight} target="_blank" /> : null}
+              {link ? <LinkButton highlight={highlight} target="_blank" /> : null}
             </h3>
             <p className="text-neutral-300 text-xs mt-2 h-8">{description}</p>
           </div>

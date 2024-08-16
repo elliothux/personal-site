@@ -63,10 +63,10 @@ const items: ConfigItem[] = [
     description:
       'A SaaS company pioneering the future of fitness training software, empowering a revolution in how fitness training is delivered and experienced globally.',
     works: [
-      'Lead the foundation and development of cocast.fit, a progressive start-up offering SaaS for fitness trainers.',
+      'Lead the foundation and development of cocast.fit.',
       'Develop and execute the technical vision and roadmap for cocast.fit.',
       'Architect and drive the implementation of cutting-edge technologies to ensure the platform is secure, reliable, user-friendly and scalable, aligning with the overall business strategy.',
-      'Hands-on development and infrastructure of the software, including front-end, back-end, apps (Android & iOS), database, DevOps and more.',
+      'Hands-on development and infrastructure of the software, wrote all codes, including front-end, back-end, apps (Android & iOS), database, DevOps and more.',
       'Oversaw all operations and development from product design and visual design to business activities to ensure the desired vision and advance the mission.',
     ],
   },
