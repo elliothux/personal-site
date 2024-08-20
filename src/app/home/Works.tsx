@@ -63,10 +63,10 @@ const items: ConfigItem[] = [
     description:
       'A SaaS company pioneering the future of fitness training software, empowering a revolution in how fitness training is delivered and experienced globally.',
     works: [
-      'Lead the foundation and development of cocast.fit.',
-      'Develop and execute the technical vision and roadmap for cocast.fit.',
-      'Architect and drive the implementation of cutting-edge technologies to ensure the platform is secure, reliable, user-friendly and scalable, aligning with the overall business strategy.',
-      'Hands-on development and infrastructure of the software, wrote all codes, including front-end, back-end, apps (Android & iOS), database, DevOps and more.',
+      'Led the foundation and development of cocast.fit.',
+      'Developed and executed the technical vision and roadmap for Cocast.fit.',
+      'Architected and drove the implementation of cutting-edge technologies to ensure the platform is secure, reliable, user-friendly and scalable, aligning with the overall business strategy.',
+      'Hands-on development and infrastructure of the software, wrote all codes, including front-end, back-end, apps (Android & iOS), database, DevOps and more. Wrote all code.',
       'Oversaw all operations and development from product design and visual design to business activities to ensure the desired vision and advance the mission.',
     ],
   },
@@ -105,11 +105,11 @@ const items: ConfigItem[] = [
     ),
     works: [
       'Owned, led, oversaw, and drove a design-to-code platform.',
-      'Design and implement the complete functional flow of the platform, from parsing and recognizing to rendering and final code.',
-      'Establish standardized specifications for UI models, DSL and processors.',
-      'Lead the development of an algorithm system, including layout recognition, block segmentation, semantic recognition, similarity analysis, visual diff, and more.',
-      'Develop a heterogeneous deployment solution for Node containerization + Python high-density deployment algorithm service.',
-      'Construct a complete ML system based on PyTorch.',
+      'Designed and implemented the complete functional flow of the platform, from parsing and recognizing to rendering and final code.',
+      'Established standardized specifications for UI models, DSL and processors.',
+      'Led the development of an algorithm system, including layout recognition, block segmentation, semantic recognition, similarity analysis, visual diff, and more.',
+      'Developed a heterogeneous deployment solution for Node containerization + Python high-density deployment algorithm service.',
+      'Constructed a complete ML system based on PyTorch.',
     ],
   },
   {
@@ -130,9 +130,10 @@ const items: ConfigItem[] = [
     description:
       'Tmall is one of the largest e-commerce platforms in China, with over 500 million monthly active users.',
     works: [
-      'Manage two of the largest FMCG catalogs, serving parents, children and pets, with a daily user flow exceeding 3.5 million',
-      'Utilize expertise in the React framework (both web and Native) to develop and maintain a scalable UI framework that encompasses core functionalities.',
-      'Contribute to the structure and implementation of the operational platform, collaborating closely with key stakeholders to deeply understand customer needs and translate them into precise and product catalog-focused data delivery.',
+      'Managed two of the largest FMCG catalogs, serving parents, children and pets, with a daily user flow exceeding 3.5 million.',
+      'Utilized expertise in the React framework (both web and Native) to develop and maintain a scalable UI framework that encompasses core functionalities.',
+      'Developed a dynamic rendering solution that enabled data-driven personalized rendering for advertisements.',
+      'Contributed to the structure and implementation of the operational platform, collaborating closely with key stakeholders to deeply understand customer needs and translate them into precise and product catalog-focused data delivery.',
       'Participated in the construction of Function as a Service (FaaS) infrastructures, implementing service registration, management, monitoring, and more',
     ],
   },

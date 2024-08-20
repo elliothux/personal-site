@@ -5,17 +5,18 @@ import { HeroSection } from 'components/HeroSection';
 import { Balancer } from 'react-wrap-balancer';
 
 const items = [
-  'Typescript',
-  'Javascript',
+  'TypeScript',
+  'JavaScript',
   'HTML',
   'CSS',
   'NodeJS',
   'React',
   'React Native',
   'NextJS',
-  'PostgresSQL',
+  'PostgreSQL',
   'NestJS',
   'Tailwind',
+  'Expo',
   'GraphQL',
   'Git',
   'DevOps',
