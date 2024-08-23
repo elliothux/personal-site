@@ -1,6 +1,6 @@
 import { Inter, Kanit, Lora } from 'next/font/google';
 
-export const inter = Inter({ subsets: ['latin'], weight: ['400', '800'] });
+export const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '800'] });
 
 export const lora = Lora({ subsets: ['latin'], style: 'italic', weight: ['400'] });
 

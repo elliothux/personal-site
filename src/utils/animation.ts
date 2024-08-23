@@ -10,3 +10,14 @@ export const blockAnimation = {
     scale: 1,
   },
 };
+
+export const blockSecondaryAnimation = {
+  initial: {
+    opacity: 0,
+    filter: 'blur(10px)',
+  },
+  animate: {
+    opacity: 1,
+    filter: 'blur(0px)',
+  },
+};

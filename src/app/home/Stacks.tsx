@@ -27,7 +27,6 @@ const items = [
   'GCP',
   'Cloudflare',
   'Figma',
-  'Photoshop',
 ];
 
 export function Stacks({ show }: { show: boolean }) {

@@ -28,7 +28,7 @@ export function Projects() {
           type: 'spring',
         }}
         viewport={{ once: true }}
-        className={cn('text-neutral-400 mt-24 text-2xl text-center', lora.className)}
+        className={cn('text-neutral-400 mt-24 text-4xl text-center', lora.className)}
       >
         My projects
       </motion.h2>
