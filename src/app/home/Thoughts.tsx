@@ -87,17 +87,17 @@ export function Thoughts() {
       >
         My Thoughts
       </motion.h2>
-      <motion.div
-        {...animation}
-        transition={{
-          duration: 2,
-          type: 'spring',
-        }}
-        viewport={{ once: true }}
-        className={cn('text-xs md:text-sm text-neutral-600 !leading-relaxed font-light', inter.className)}
-      >
+      <div className={cn('text-xs md:text-sm text-neutral-600 !leading-relaxed font-light', inter.className)}>
         {items.map(([title, items], index) => (
-          <Fragment key={index}>
+          <motion.div
+            key={index}
+            {...animation}
+            transition={{
+              duration: 2,
+              type: 'spring',
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+          >
             <p className={cn(lora.className, 'mb-8 mt-16 text-center text-lg text-neutral-800')}>{title}</p>
             {items.map(([title, content]) => (
               <Fragment key={title}>
@@ -110,9 +110,9 @@ export function Thoughts() {
                 <p className="mb-8 mt-2">{content}</p>
               </Fragment>
             ))}
-          </Fragment>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 }
