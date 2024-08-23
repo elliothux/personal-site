@@ -87,7 +87,12 @@ export function Thoughts() {
       >
         My Thoughts
       </motion.h2>
-      <div className={cn('text-xs md:text-sm text-neutral-600 !leading-relaxed font-light', inter.className)}>
+      <div
+        className={cn(
+          'text-xs md:text-sm text-neutral-600 !leading-relaxed font-light max-w-[80vw] mx-auto',
+          inter.className,
+        )}
+      >
         {items.map(([title, items], index) => (
           <motion.div
             key={index}
@@ -96,7 +101,7 @@ export function Thoughts() {
               duration: 2,
               type: 'spring',
             }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: index === 0 ? 0.15 : 0.45 }}
           >
             <p className={cn(lora.className, 'mb-8 mt-16 text-center text-lg text-neutral-800')}>{title}</p>
             {items.map(([title, content]) => (
