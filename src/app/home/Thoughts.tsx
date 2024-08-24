@@ -13,7 +13,7 @@ const animation = {
 
 const items: [string, [string, string][]][] = [
   [
-    'Technology & architecture',
+    'Technology & Architecture',
     [
       [
         'Simplicity in coding leads to better understanding and collaboration.',
@@ -33,7 +33,7 @@ const items: [string, [string, string][]][] = [
       ],
       [
         'Technology should be a means to an end, focusing on delivering real value to users.',
-        "At the end of the day, I believe technology should serve the product, not the other way around. I'm not into tech for tech's sake. I focus on using technology to make the product better, always thinking about how it helps the end user.",
+        `I believe the value of technology is to serve the product. I reject the idea of getting lost in technology for its own sake and won’t invest significant effort in tech that doesn\`t deliver real value. I prefer to stay close to the product and approach technology from a product-centric perspective.`,
       ],
     ],
   ],
@@ -95,7 +95,7 @@ export function Thoughts() {
       >
         {items.map(([title, items], index) => (
           <motion.div
-            key={index}
+            key={title}
             {...animation}
             transition={{
               duration: 2,
