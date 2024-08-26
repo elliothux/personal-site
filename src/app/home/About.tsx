@@ -33,7 +33,7 @@ export function About({ show }: { show: boolean }) {
         <div className="grid gap-2 mt-8 mb-4">
           {items.map(([Icon, text]) => (
             <p key={text} className="flex items-start lg:items-center gap-2 text-sm font-light py-1">
-              <Icon size={18} className="grow-0 shrink-0" />
+              <Icon size={18} className="grow-0 shrink-0" strokeWidth={1.4} />
               <Balancer as="span">{text}</Balancer>
             </p>
           ))}
