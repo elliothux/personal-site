@@ -33,7 +33,7 @@ interface ConfigItem {
 const items: ConfigItem[] = [
   {
     company: 'Cocast.fit',
-    position: 'Co-founder & CEO & CTO',
+    position: 'Co-founder & CTO',
     period: 'June 2023 - Present',
     logo: (className) => (
       <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
