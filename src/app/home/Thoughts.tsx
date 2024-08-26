@@ -16,19 +16,19 @@ const items: [string, [string, string][]][] = [
     'Technology & Architecture',
     [
       [
-        'I like simple code that doesn\'t give people headaches.',
+        "I like simple code that doesn't give people headaches.",
         'As a software engineer, I’m passionate about technology and driven to create great products with it. Over my years of engineering experience, I’ve adhered to the principle of keeping my code clean, clear, and simple. I’m not a fan of using overly fancy or complex design patterns, or relying on mysterious magic numbers. My aim has always been to write code that anyone can easily understand.',
       ],
       [
-        'I build software the same way I\'d design a product.',
+        "I build software the same way I'd design a product.",
         'I believe there’s a strong connection between software architecture and product design. Just as a good product should feel simple, intuitive, and easy to use for customers, software architecture should do the same for its users—the entire tech team, including myself. I approach software architecture with the same care as product design, focusing on building systems that are consistent, transparent, and scalable, ensuring that the entire team benefits.',
       ],
       [
-        'I\'m all about smart solutions that don\'t break the bank.',
+        "I'm all about smart solutions that don't break the bank.",
         'I’m highly focused on efficiency and cost control, whether it’s cloud infrastructure costs or development expenses. Software architecture isn’t about mindlessly adding more services and middleware or throwing more time and manpower at a problem. I lean towards small, efficient solutions rather than large, all-encompassing ones. For instance, I prefer lightweight serverless workers over centralized servers. I’m also a fan of monorepos and have extensive experience with cross-project isomorphism. From the perspective of a startup CTO, good architecture means choosing the most suitable solutions that support the product while ensuring minimal cloud expenditure and maximum development efficiency.',
       ],
       [
-        'I\'m a fan of clear rules.',
+        "I'm a fan of clear rules.",
         'To maximize development efficiency and software quality, my answer lies in standards and specifications. The first thing I do in any project is establish project standards and coding guidelines. This includes the engineering structure, service layering, component splitting, API calls, routing, naming rules, code style, and more. I ensure these standards are enforced through a series of automated tools. I invest a lot of effort in this area, but in my experience, the costs are well worth it. As the project evolves, the value of these standards only increases.',
       ],
       [
@@ -87,12 +87,7 @@ export function Thoughts() {
       >
         My Thoughts
       </motion.h2>
-      <div
-        className={cn(
-          'text-sm text-neutral-600 !leading-relaxed font-light max-w-[88vw] mx-auto',
-          inter.className,
-        )}
-      >
+      <div className={cn('text-sm text-neutral-600 !leading-relaxed font-light max-w-[82vw] mx-auto', inter.className)}>
         {items.map(([title, items], index) => (
           <motion.div
             key={title}
