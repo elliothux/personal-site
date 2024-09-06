@@ -72,7 +72,7 @@ const items: ConfigItem[] = [
   },
   {
     company: 'MoeGo',
-    position: 'Principle Engineer & Team Lead',
+    position: 'Team Lead & Staff Engineer',
     period: 'June 2022 - May 2023',
     logo: (className) => (
       <div className={cn(className, 'bg-white relative flex items-center justify-center')}>
@@ -98,7 +98,7 @@ const items: ConfigItem[] = [
   },
   {
     company: 'Tencent',
-    position: 'Principle Engineer & Project Lead',
+    position: 'Team Lead & Staff Engineer',
     period: 'Jul 2021 - Jun 2022',
     logo: (className) => (
       <div className={cn(className, 'bg-blue-600 relative flex items-center justify-center')}>{tencentLogo}</div>
@@ -139,7 +139,7 @@ const items: ConfigItem[] = [
   },
   {
     company: 'Tencent',
-    position: 'Junior Engineer',
+    position: 'Software Engineer',
     period: 'Jul 2018 - Apr 2020',
     logo: (className) => (
       <div className={cn(className, 'bg-blue-600 relative flex items-center justify-center')}>{tencentLogo}</div>

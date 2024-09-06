@@ -96,7 +96,7 @@ export function Thoughts() {
               duration: 2,
               type: 'spring',
             }}
-            viewport={{ once: true, amount: index === 0 ? 0.15 : 0.45 }}
+            viewport={{ once: true, amount: index === 0 ? 0.15 : 0.25 }}
           >
             <p className={cn(lora.className, 'mb-10 mt-16 text-center text-xl text-neutral-800')}>{title}</p>
             {items.map(([title, content]) => (
