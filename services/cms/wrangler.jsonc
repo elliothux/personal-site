@@ -1,0 +1,67 @@
+{
+  // Microfeed keeps its release source in a private cache; use the cms:* scripts
+  // so its management CLI can prepare that cache before Wrangler runs.
+  "name": "elliot-personal-site-cms",
+  "workers_dev": false,
+  "main": "../../../../Library/Caches/microfeed/manage/repository/src/worker.ts",
+  "compatibility_date": "2026-07-29",
+  "compatibility_flags": ["nodejs_compat"],
+  "cache": {
+    "enabled": true,
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../../../../Library/Caches/microfeed/manage/repository/dist",
+  },
+  "observability": {
+    "enabled": false,
+  },
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA",
+  },
+  "secrets": {
+    "required": ["UPLOAD_SIGNING_KEY", "BETTER_AUTH_SECRET"],
+  },
+  "d1_databases": [
+    {
+      "binding": "FEED_DB",
+      "database_name": "elliot-personal-site-cms",
+      "database_id": "23870a0d-50a5-4efc-b95c-2ebc735383e2",
+      "migrations_dir": "../../../../Library/Caches/microfeed/manage/repository/migrations",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "elliot",
+    },
+  ],
+  "queues": {
+    "consumers": [],
+    "producers": [],
+  },
+  "triggers": {
+    "crons": [],
+  },
+  "vars": {
+    "CLOUDFLARE_PROJECT_NAME": "elliot-personal-site-cms",
+    "DEPLOYMENT_ENVIRONMENT": "production",
+    "MICROFEED_ADMIN_AUTH_MODE": "built-in",
+    "MICROFEED_ADMIN_PATH": "admin",
+    "MICROFEED_CLOUDFLARE_ACCOUNT_ID": "9e39f4dc7a179387b173eb3b8f73488d",
+    "MICROFEED_INSTANCE_ID": "d49f1189-5a39-492f-9e1c-399bfc7c1d28",
+    "MICROFEED_INSTANCE_NAME": "elliot-personal-site-cms",
+    "MICROFEED_R2_BUCKET_NAME": "elliot",
+    "MICROFEED_R2_SETUP_MODE": "automatic",
+    "MICROFEED_WEBHOOK_QUEUE_ID": "",
+    "MICROFEED_WEBHOOK_QUEUE_NAME": "",
+    "MICROFEED_WEBHOOK_STATE": "unprovisioned",
+    "MICROFEED_WORKER_NAME": "elliot-personal-site-cms",
+  },
+  "routes": [
+    {
+      "pattern": "cms.elliothu.me",
+      "custom_domain": true,
+    },
+  ],
+}

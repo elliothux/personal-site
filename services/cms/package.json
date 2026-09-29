@@ -1,0 +1,15 @@
+{
+  "name": "@elliot-personal-site/cms",
+  "private": true,
+  "scripts": {
+    "build": "microfeed manage deploy --instance elliot-personal-site-cms --account-id 9e39f4dc7a179387b173eb3b8f73488d",
+    "config": "microfeed manage config --instance elliot-personal-site-cms",
+    "deploy": "microfeed manage deploy --instance elliot-personal-site-cms --account-id 9e39f4dc7a179387b173eb3b8f73488d",
+    "dev": "microfeed manage dev --instance elliot-personal-site-cms",
+    "init": "microfeed manage init --instance elliot-personal-site-cms --project-name elliot-personal-site-cms --account-id 9e39f4dc7a179387b173eb3b8f73488d --d1-name elliot-personal-site-cms --r2-name elliot --admin-path admin --admin-auth built-in --owner-email hqy841440305@gmail.com --reuse-d1 --reuse-r2 --yes",
+    "status": "microfeed manage status --instance elliot-personal-site-cms --account-id 9e39f4dc7a179387b173eb3b8f73488d"
+  },
+  "devDependencies": {
+    "@microfeed/cli": "1.0.13"
+  }
+}

@@ -2,12 +2,19 @@
   "name": "personal-site",
   "version": "0.1.0",
   "private": true,
+  "workspaces": ["services/*"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "bun run build && wrangler pages deploy ./out --project-name elliothu-personal-site --branch main"
+    "deploy": "bun run build && wrangler pages deploy ./out --project-name elliothu-personal-site --branch main",
+    "cms:build": "bun run --cwd services/cms build",
+    "cms:config": "bun run --cwd services/cms config",
+    "cms:deploy": "bun run --cwd services/cms deploy",
+    "cms:dev": "bun run --cwd services/cms dev",
+    "cms:init": "bun run --cwd services/cms init",
+    "cms:status": "bun run --cwd services/cms status"
   },
   "dependencies": {
     "clsx": "^2.1.1",
